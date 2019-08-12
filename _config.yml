@@ -13,7 +13,7 @@ disqus_shortname:
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
-description: Product marketing template for Jekyll.
+description: 심혈관질환 환자의 치료경로를 모니터링하고, 개인별 위험도를 분석하는 인공지능 SW입니다.
 author:
   name:
   email:

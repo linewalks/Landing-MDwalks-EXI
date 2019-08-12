@@ -22,9 +22,15 @@
 	</head>
 	<body>
 		<header>
-			<div class="container">
-				<div class="company-name"><a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/images/logo.png" alt="MDwalks-EXI Cardio logo" width="95" height="33" /></a></div>
-				{% include navigation.html %}
+			<div class="container pl360 pr360">
+				<div class="company-name">
+					<a href="{{ site.baseurl }}/">
+						<img src="{{ site.baseurl }}/images/exi-wordmark-full.png" 
+						 	srcset="images/exi-wordmark-full@2x.png 2x, images/exi-wordmark-full@3x.png 3x"
+							alt="MDwalks-EXI Cardio logo" width="240" height="31"/>
+					</a>
+				</div>
+				<!-- {% include navigation.html %} -->
 			</div>
 		</header>
 		{{ content }}

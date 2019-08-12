@@ -1,8 +1,48 @@
+html, body {
+  min-width: 1920px;
+  margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  height: 90px;
+  display: flex;
+  align-items: center;
+}
+
+section, h2, p {
+  padding: 0;
+  margin: 0;
+}
+
+.company-name {
+  display: inline-block
+}
+
+.container {
+  max-width: 1920px;
+  width: 1920px;
+}
+
+.description {
+  opacity: 0.6;
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -1.5px;
+  color: #202020;
+}
+
 .top-cta {
 	color: #ffffff;
 	text-align: center;
 	background-color: #072644;
-	padding-top: 50px;
+	padding-top: 60px;
 
 	p {
 		color: #fff;
@@ -10,8 +50,41 @@
 }
 
 .center {
-  margin: auto;
+  margin: 0 auto;
 }
+
+.table-cell-group {
+  display: table;
+}
+
+.table-cell-group > * {
+  display: table-cell;
+}
+
+.text-left {text-align: left;}
+.text-right {text-align: right;}
+
+.mt3 {margin-top: 3px;}
+.mt20 {margin-top: 20px;}
+.mt26 {margin-top: 26px;}
+.mt50 {margin-top: 50px;}
+.mt80 {margin-top: 80px;}
+.mt90 {margin-top: 90px;}
+.mt110 {margin-top: 110px;}
+.mt130 {margin-top: 130px;}
+.mt146 {margin-top: 146px;}
+.mt199 {margin-top: 199px;}
+
+.mr20 {margin-right: 20px;}
+.mr22 {margin-right: 22px;}
+
+.pt40 {padding-top: 40px;}
+
+.pr142 {padding-right: 142px;}
+.pr190 {padding-right: 190px;}
+.pl360 {padding-left: 360px;}
+.pr360 {padding-right: 360px;}
+
 
 .MDwalks-EXI-Cardiac-Title {
   width: 841px;
@@ -63,10 +136,8 @@
   }
 
   a {
-    
     width: 230px;
     height: 33px;
-    // font-family: Muli;
     font-size: 22px;
     font-weight: bold;
     font-style: normal;
@@ -97,8 +168,6 @@
 }
 
 .EXI-cardio {
-  width: 350px;
-  height: 71px;
   font-family: Muli;
   font-size: 48px;
   font-weight: normal;
@@ -116,8 +185,6 @@
 }
 
 .EXI-cardio-solution {
-  width: 310px;
-  height: 80px;
   font-family: SpoqaHanSans;
   font-size: 54px;
   font-weight: bold;
@@ -180,13 +247,15 @@
 .bottom-cta {
 	background-color: #072644;
 	color: #fff;
-	text-align: center;
-	margin: 0;
-	padding: 130px 0;
+  padding: 130px 0 50px;
+}
 
-	h2 {
-		margin-bottom: 50px;
-	}
+.bottom-cta-bar {
+  width: 1600px;
+  height: 2px;
+  opacity: 0.14;
+  margin: 116px auto 0;
+  background-color: #ffffff;
 }
 
 .customers {
@@ -212,7 +281,15 @@
 
 .footer {
   height: 168px;
+}
 
+.footer section {
+  display: flex;
+  align-items: center;
+}
+
+.footer section > *:last-child {
+  margin-left: auto;
 }
 
 .footer_logo {
@@ -222,11 +299,7 @@
 }
 
 .terms-privacy  {
-  margin-top: 46px;
-  width: 48px;
-  height: 20px;
   opacity: 0.8;
-  font-family: SpoqaHanSans;
   font-size: 14px;
   font-weight: bold;
   font-style: normal;
@@ -249,23 +322,4 @@
   letter-spacing: -1px;
   text-align: right;
   color: #ffffff;
-}
-
-
-@media #{$desktop} {
-	.flex {
-		@include flexbox;
-		align-items: center;
-		flex-direction: row;
-
-		.text, .image {
-			-webkit-flex: 1;
-			flex: 1;
-			padding: 0 20px;
-		}
-	}
-
-	.content section:nth-child(even) .flex {
-		flex-direction: row-reverse;
-	}
 }
