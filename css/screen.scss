@@ -9,5 +9,13 @@
 @import "forms";
 @import "navigation";
 @import "custom";
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css);
+// @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css);
+@font-face {
+  font-family: 'Spoqa Han Sans JP';
+  font-weight: 400;
+  src: local('Spoqa Han Sans JP Regular'),
+  url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans_JP/SpoqaHanSansJPRegular.woff2') format('woff2'),
+  url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans_JP/SpoqaHanSansJPRegular.woff') format('woff'),
+  url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@01ff0283e4f36e159ffbf744b36e16ef742da6d8/Subset/SpoqaHanSans_JP/SpoqaHanSansJPRegular.ttf') format('truetype');
+}
 @import url(//fonts.googleapis.com/css?family=Muli&display=swap);
