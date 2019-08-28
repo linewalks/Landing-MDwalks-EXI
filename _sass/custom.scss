@@ -1,5 +1,9 @@
+$contents_width: 1200px;
+$contents_horizontal_padding: 10px;
+
 html, body {
-  min-width: 1920px;
+  min-width: $contents_width + $contents_horizontal_padding * 2;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -23,8 +27,8 @@ section, h2, p {
 }
 
 .container {
-  max-width: 1920px;
-  width: 1920px;
+  min-width: $contents_width + $contents_horizontal_padding * 2;
+  padding: 0 $contents_horizontal_padding;
 }
 
 .description {
@@ -39,14 +43,9 @@ section, h2, p {
 }
 
 .top-cta {
-	color: #ffffff;
-	text-align: center;
-	background-color: #072644;
-	padding-top: 60px;
-
-	p {
-		color: #fff;
-	}
+  color: #ffffff;
+  text-align: center;
+  padding-top: 60px;
 }
 
 .center {
@@ -87,7 +86,6 @@ section, h2, p {
 
 
 .MDwalks-EXI-Cardiac-Title {
-  width: 841px;
   height: 73px;
   font-family: Muli;
   font-size: 58px;
@@ -105,7 +103,6 @@ section, h2, p {
   margin-bottom: 50px;
   width: 100%;
   height: 200px;
-  background-color: #072644;
 }
 
 .subtitle-text {
@@ -153,13 +150,6 @@ section, h2, p {
   }
 }
 
-.bg_pattern_main {
-  width: 1920px;
-  height: 620px;
-  object-fit: contain;
-  background-image: "images/bg-pattern-main.svg"
-}
-
 .frame_movie {
   width: 1120px;
   height: 630px;
@@ -199,21 +189,45 @@ section, h2, p {
 .img_page01 {
   width: 1449px;
   height: 687px;
-  object-fit: contain;
+  background-image: url("/images/img-page-01.png");
+  background-position-x: 111px;
+  background-repeat: no-repeat;
+  background-size: 1449px 687px;
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+    & {
+      background-image: url("/images/img-page-01@2x.png");
+    }
+  }
 }
 
 .img_page02 {
-  width: 1256px;
+  width: 1394px;
   height: 687px;
-  object-fit: contain;
+  position: relative;
+
+  img {
+    position: absolute;
+    left: -360px;
+  }
 }
 
 .img_page03 {
-  width: 1559.5px;
+  width: 1560px;
   height: 687px;
-  object-fit: contain;
-}
+  background-image: url("/images/img-page-03.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 1560 687px;
 
+  @media (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+    & {
+      background-image: url("/images/img-page-03@2x.png");
+    }
+  }
+}
 
 .tech {
   margin-top: 110px;
@@ -227,7 +241,6 @@ section, h2, p {
 
 .icon_text {
   margin-top: 60px;
-  width: 210px;
   height: 84px;
   font-family: SpoqaHanSans;
   font-size: 26px;
@@ -245,13 +258,22 @@ section, h2, p {
 }
 
 .bottom-cta {
-	background-color: #072644;
-	color: #fff;
-  padding: 130px 0 50px;
+  background-color: #072644;
+  color: #fff;
+  padding: 0 0 50px;
+  margin-top: -2px;
+}
+
+.bottom-cta-top {
+  height: 130px;
+  background-image: url("/images/page-05-bg.svg");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 130px;
 }
 
 .bottom-cta-bar {
-  width: 1600px;
+  width: 1200px;
   height: 2px;
   opacity: 0.14;
   margin: 116px auto 0;
@@ -310,8 +332,6 @@ section, h2, p {
 }
 
 .copyright {
-  width: 294px;
-  height: 18px;
   opacity: 0.6;
   font-family: Muli;
   font-size: 14px;
@@ -322,4 +342,60 @@ section, h2, p {
   letter-spacing: -1px;
   text-align: right;
   color: #ffffff;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin transform($transforms) {
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+.hidden-fade-in {
+  opacity: 0;
+}
+
+@include keyframes(fade-in) {
+  from {opacity: 0; @include transform(scale(.7,.7))}
+  to {opacity: 1;}
+}
+
+.hidden-fade-in-up {
+  opacity: 0;
+}
+
+@include keyframes(fade-in-up) {
+  from {
+    transform: translate3d(0,80px,0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0,0,0);
+    opacity: 1
+  }
+}
+
+.fade-in-element {
+  animation: fade-in 1.4s;
+}
+
+.fade-in-up-element {
+  animation: fade-in-up 1.4s;
 }
